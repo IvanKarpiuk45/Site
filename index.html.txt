@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>KARP.DEV | Професійна розробка сайтів та Web-рішень</title>
+    <meta name="description" content="Іван Карп’юк — розробник надійних технічних рішень для бізнесу. Створення сайтів, редизайн та підтримка під брендом KARP.DEV.">
+    <meta property="og:title" content="KARP.DEV | Web Solutions">
+    <meta property="og:description" content="Я створюю сайти, які працюють. Твій бізнес отримає надійне технічне рішення.">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { 
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#4f46e5'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: all 0.3s ease; scroll-behavior: smooth; [span_0](start_span)}
+        .bg-grid { background-image: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px); background-size: 30px 30px; }[span_0](end_span)
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); [span_1](start_span)}
+        .btn-active:active { transform: scale(0.95); }[span_1](end_span)
+        .project-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#050507] dark:text-white bg-grid min-h-screen">
+
+    <nav class="fixed w-full top-0 z-50 border-b border-black/5 dark:border-white/5 bg-white/80 dark:bg-[#050507]/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tighter flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-indigo-600 rounded-lg">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-600/30">
+                    [span_2](start_span)&lt;/&gt;[span_2](end_span)
+                </div>
+                [span_3](start_span)<span>KARP<span class="text-indigo-600">.DEV</span></span>[span_3](end_span)
+            </a>
+            <div class="flex items-center gap-3">
+                [span_4](start_span)<button onclick="document.documentElement.classList.toggle('dark')" aria-label="Змінити тему" class="p-2.5 rounded-xl bg-gray-200 dark:bg-white/10 hover:scale-110 transition">🌓</button>[span_4](end_span)
+                [span_5](start_span)<button onclick="toggleLang()" id="langBtn" class="font-bold px-4 py-2 border-2 border-indigo-600 rounded-xl text-sm hover:bg-indigo-600 hover:text-white transition">EN</button>[span_5](end_span)
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 order-2 lg:order-1">
+                [span_6](start_span)[span_7](start_span)<h1 id="hero-title" class="text-5xl md:text-7xl font-black mb-6 leading-tight">Привіт, я Іван Карп’юк</h1>[span_6](end_span)[span_7](end_span)
+                <p id="hero-desc" class="text-lg md:text-xl text-slate-600 dark:text-gray-400 mb-10 leading-relaxed">
+                    Я створюю сайти, які працюють. [span_8](start_span)[span_9](start_span)Твій бізнес отримає надійне технічне рішення під брендом KARP.DEV.[span_8](end_span)[span_9](end_span)
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    <a href="https://t.me/ivankvol" target="_blank" rel="noopener" class="btn-active flex items-center justify-center gap-3 p-4 rounded-2xl bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-600/30 hover:bg-indigo-700 transition">
+                        [span_10](start_span)<span>✈️</span> Telegram: @ivankvol[span_10](end_span)
+                    </a>
+                    <a href="tel:+380779733170" class="btn-active flex items-center justify-center gap-3 p-4 rounded-2xl bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 hover:border-indigo-600 transition font-bold">
+                        [span_11](start_span)<span>📞</span> +380 77 973 31 70[span_11](end_span)
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 order-1 lg:order-2">
+                <div class="rounded-[40px] overflow-hidden shadow-2xl border-4 border-white dark:border-white/5 relative group">
+                    [span_12](start_span)<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Ivan Karpiuk - Web Developer" class="w-full h-[450px] object-cover transition duration-500 group-hover:scale-105" loading="lazy">[span_12](end_span)
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 font-mono text-xs text-indigo-400">
+                        [span_13](start_span)&lt;developer_name&gt;Ivan Karpiuk&lt;/&gt;[span_13](end_span)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <h2 id="portfolio-title" class="text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter italic">Портфоліо</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project-card group cursor-pointer overflow-hidden rounded-3xl glass p-4 transition">
+                    <div class="overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop" alt="Проєкт 1" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Повноцінний інтернет-магазин з інтеграцією платіжних систем.</p>
+                </div>
+                <div class="project-card group cursor-pointer overflow-hidden rounded-3xl glass p-4 transition">
+                    <div class="overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500&auto=format&fit=crop" alt="Проєкт 2" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SaaS Dashboard</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Аналітична панель для моніторингу бізнес-процесів.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            [span_14](start_span)[span_15](start_span)<h2 id="reviews-title" class="text-3xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter italic">Відгуки клієнтів</h2>[span_14](end_span)[span_15](end_span)
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-[32px] glass hover:border-indigo-600 transition">
+                    [span_16](start_span)<div class="text-yellow-500 mb-4">★★★★★</div>[span_16](end_span)
+                    [span_17](start_span)<p class="text-slate-600 dark:text-gray-300 italic mb-6">"Замовляв лендінг. Іван зробив все за 4 дні. Сайт літає, клієнти задоволені."</p>[span_17](end_span)
+                    [span_18](start_span)<div class="font-bold text-indigo-600">— Олександр, CEO TechStore</div>[span_18](end_span)
+                </div>
+                <div class="p-8 rounded-[32px] glass hover:border-indigo-600 transition">
+                    [span_19](start_span)<div class="text-yellow-500 mb-4">★★★★★</div>[span_19](end_span)
+                    [span_20](start_span)<p class="text-slate-600 dark:text-gray-300 italic mb-6">"Іван запропонував крутий темний стиль. Тепер ми виглядаємо як топова IT компанія."</p>[span_20](end_span)
+                    [span_21](start_span)<div class="font-bold text-indigo-600">— Марія, Дизайнер</div>[span_21](end_span)
+                </div>
+                <div class="p-8 rounded-[32px] glass border-b-indigo-600 border-b-4 transition">
+                    [span_22](start_span)<div class="text-yellow-500 mb-4">★★★★★</div>[span_22](end_span)
+                    [span_23](start_span)<p class="text-slate-600 dark:text-gray-300 italic mb-6">"@ivankvol завжди на зв'язку, допоміг навіть з налаштуванням хостингу."</p>[span_23](end_span)
+                    [span_24](start_span)<div class="font-bold text-indigo-600">— Дмитро, Підприємець</div>[span_24](end_span)
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 text-center border-t border-white/10">
+        [span_25](start_span)<h3 class="text-2xl font-bold mb-6">Готові почати?</h3>[span_25](end_span)
+        [span_26](start_span)<a href="https://t.me/ivankvol" target="_blank" rel="noopener" class="inline-block bg-indigo-600 text-white px-10 py-4 rounded-2xl font-black text-xl hover:scale-105 transition shadow-2xl shadow-indigo-600/40">НАПИСАТИ В TELEGRAM</a>[span_26](end_span)
+        <div class="mt-10 text-gray-500 text-sm">© 2026 KARP.DEV | [span_27](start_span)Created by Ivan Karpiuk</div>[span_27](end_span)
+    </footer>
+
+    <script>
+        let currentLang = 'ua';
+        const translations = {
+            ua: {
+                [span_28](start_span)heroTitle: "Привіт, я Іван Карп’юк",[span_28](end_span)
+                [span_29](start_span)heroDesc: "Я створюю сайти, які працюють. Твій бізнес отримає надійне технічне рішення під брендом KARP.DEV.",[span_29](end_span)
+                [span_30](start_span)reviewsTitle: "Відгуки клієнтів",[span_30](end_span)
+                portfolioTitle: "Портфоліо",
+                [span_31](start_span)langBtn: "EN"[span_31](end_span)
+            },
+            en: {
+                [span_32](start_span)heroTitle: "Hi, I'm Ivan Karpiuk",[span_32](end_span)
+                [span_33](start_span)heroDesc: "I build websites that work. Your business will get a solid technical solution under KARP.DEV brand.",[span_33](end_span)
+                [span_34](start_span)reviewsTitle: "Client Reviews",[span_34](end_span)
+                portfolioTitle: "Portfolio",
+                [span_35](start_span)langBtn: "UA"[span_35](end_span)
+            }
+        };
+
+        function toggleLang() {
+            currentLang = currentLang === 'ua' ? [span_36](start_span)'en' : 'ua';[span_36](end_span)
+            [span_37](start_span)document.getElementById('hero-title').innerText = translations[currentLang].heroTitle;[span_37](end_span)
+            [span_38](start_span)document.getElementById('hero-desc').innerText = translations[currentLang].heroDesc;[span_38](end_span)
+            [span_39](start_span)document.getElementById('reviews-title').innerText = translations[currentLang].reviewsTitle;[span_39](end_span)
+            document.getElementById('portfolio-title').innerText = translations[currentLang].portfolioTitle;
+            [span_40](start_span)document.getElementById('langBtn').innerText = translations[currentLang].langBtn;[span_40](end_span)
+        }
+    </script>
+</body>
+</html>
