@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.Y.S.T.E.M. U.P.D.A.T.E.</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Екран з кнопкою */
+        #start-screen {
+            text-align: center;
+            z-index: 200;
+        }
+
+        .start-btn {
+            background: transparent;
+            color: #00ff41;
+            border: 2px solid #00ff41;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ff41;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            background: #00ff41;
+            color: #000;
+        }
+
+        /* Консоль з кодом */
+        #console {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: left;
+        }
+
+        /* Вікно критичної помилки */
+        #error-overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff0000;
+            color: white;
+            padding: 30px;
+            border: 5px solid #fff;
+            text-align: center;
+            z-index: 300;
+            width: 85%;
+            max-width: 450px;
+            box-shadow: 0 0 100px #f00;
+        }
+
+        .blink { animation: blinker 0.15s infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="start-screen">
+        <p>Критичне оновлення безпеки версія 4.1.0</p>
+        <button class="start-btn" onclick="startHack()">Встановити оновлення</button>
+    </div>
+
+    <div id="console"></div>
+
+    <div id="error-overlay">
+        <h1 class="blink">УВАГА! СИСТЕМУ ЗЛАМАНО</h1>
+        <p>Виявлено несанкціоноване копіювання даних...</p>
+        <p>Hard Drive Partition: WIPED</p>
+        <hr>
+        <h2 id="percent">ВИДАЛЕННЯ: 0%</h2>
+    </div>
+
+    <script>
+        const consoleEl = document.getElementById('console');
+        const errorOverlay = document.getElementById('error-overlay');
+        const startScreen = document.getElementById('start-screen');
+        const percentEl = document.getElementById('percent');
+
+        let audioCtx;
+
+        // Функція створення звуку
+        function playSound(freq, duration) {
+            if (!audioCtx) return;
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.frequency.value = freq;
+            oscillator.type = 'square';
+            gainNode.gain.setValueAtTime(0.03, audioCtx.currentTime);
+            oscillator.start();
+            setTimeout(() => oscillator.stop(), duration);
+        }
+
+        const hackLines = [
+            "> Initializing update protocol...",
+            "> ERROR: Security certificate bypassed",
+            "> Loading Trojan.JS.Dropper...",
+            "> Connection to hidden_server established",
+            "> Extracting Chrome_Passwords.db...",
+            "> WARNING: CPU temperature rising",
+            "> Accessing webcam... [SUCCESS]",
+            "> Encrypting /Home/Pictures/...",
+            "> Deleting MacOS_System_Files...",
+            "> Sending location to 185.12.44.1",
+            "> Root access granted (uid=0)",
+            "> Overriding fan control...",
+            "> Kernel Panic initiated..."
+        ];
+
+        let lineIndex = 0;
+
+        // Головна функція запуску розіграшу
+        function startHack() {
+            // Активуємо аудіо
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Ховаємо кнопку і показуємо консоль
+            startScreen.style.display = 'none';
+            consoleEl.style.display = 'block';
+
+            printLine();
+        }
+
+        function printLine() {
+            if (lineIndex < 35) {
+                const line = document.createElement('div');
+                line.textContent = hackLines[Math.floor(Math.random() * hackLines.length)];
+                consoleEl.appendChild(line);
+                window.scrollTo(0, document.body.scrollHeight);
+                
+                playSound(120, 30); // Звук кожного рядка
+
+                lineIndex++;
+                setTimeout(printLine, 450); // Повільна швидкість
+            } else {
+                showError();
+            }
+        }
+
+        function showError() {
+            errorOverlay.style.display = 'block';
+            playSound(440, 600); // Сигнал тривоги
+            
+            let p = 0;
+            const interval = setInterval(() => {
+                p += Math.floor(Math.random() * 4) + 1;
+                if (p >= 100) {
+                    p = 100;
+                    clearInterval(interval);
+                    playSound(900, 1500); // Фінальний писк
+                }
+                percentEl.textContent = "ВИДАЛЕННЯ: " + p + "%";
+            }, 180);
+        }
+    </script>
+</body>
+</html>
