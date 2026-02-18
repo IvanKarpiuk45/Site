@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRITICAL_SYSTEM_FAILURE</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        #console { width: 100%; height: 100vh; }
+
+        #error-overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff0000;
+            color: white;
+            padding: 30px;
+            border: 5px solid #fff;
+            text-align: center;
+            z-index: 100;
+            width: 85%;
+            max-width: 450px;
+            box-shadow: 0 0 100px #f00;
+        }
+
+        .blink { animation: blinker 0.15s infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="console"></div>
+
+    <div id="error-overlay">
+        <h1 class="blink">УВАГА! ВІРУС ПЕРЕЗАПИСУЄ ДАНІ</h1>
+        <p>System Breach: Detected</p>
+        <p>Hard Drive: Partitioning...</p>
+        <hr>
+        <h2 id="percent">0%</h2>
+    </div>
+
+    <script>
+        const consoleEl = document.getElementById('console');
+        const errorOverlay = document.getElementById('error-overlay');
+        const percentEl = document.getElementById('percent');
+
+        // Функція для створення системного звуку "писку"
+        function playSound(freq, duration) {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.frequency.value = freq;
+            oscillator.type = 'square';
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            oscillator.start();
+            setTimeout(() => oscillator.stop(), duration);
+        }
+
+        const hackLines = [
+            "> Initializing back-door access...",
+            "> Loading scripts/malware/rootkit.sh",
+            "> Searching for bank_accounts.txt...",
+            "> Found 432 files in /Users/Documents",
+            "> Copying private_keys.json to remote...",
+            "> Disabling Windows Defender...",
+            "> Cracking Wi-Fi password...",
+            "> WARNING: CPU temperature 95°C",
+            "> Overriding system permissions...",
+            "> ERROR: Firewall bypass failed (Attempt 2)",
+            "> ERROR: Firewall bypass SUCCESSFUL",
+            "> Deleting System32/Drivers...",
+            "> Kernel panic imminent..."
+        ];
+
+        let lineIndex = 0;
+
+        function printLine() {
+            if (lineIndex < 40) { // Менше рядків, але повільніше
+                const line = document.createElement('div');
+                line.textContent = hackLines[Math.floor(Math.random() * hackLines.length)];
+                consoleEl.appendChild(line);
+                window.scrollTo(0, document.body.scrollHeight);
+                
+                // Легкий звук при кожному рядку
+                playSound(150, 20); 
+
+                lineIndex++;
+                setTimeout(printLine, 400); // Сповільнено до 400мс
+            } else {
+                showError();
+            }
+        }
+
+        function showError() {
+            errorOverlay.style.display = 'block';
+            // Гучний тривожний звук при появі помилки
+            playSound(440, 500);
+            
+            let p = 0;
+            const interval = setInterval(() => {
+                p += Math.floor(Math.random() * 5);
+                if (p >= 100) {
+                    p = 100;
+                    clearInterval(interval);
+                    playSound(880, 1000); // Фінальний довгий писк
+                }
+                percentEl.textContent = "ВИДАЛЕННЯ: " + p + "%";
+            }, 200);
+        }
+
+        // Запуск розіграшу
+        setTimeout(printLine, 2000);
+    </script>
+</body>
+</html>
